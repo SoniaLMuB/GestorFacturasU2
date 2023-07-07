@@ -73,7 +73,7 @@
                                         <tr>
                                             <td class="p-2 whitespace-nowrap">
                                                 <div class="flex items-center">
-                                                    <div class="w-10 h-10 flex-shrink-0 mr-2 sm:mr-3"><img class="rounded-full" src="https://img.freepik.com/vector-premium/recibo-factura-papel-plano-dibujos-animados-o-factura-pagar-aislado_101884-255.jpg?w=2000" width="40" height="40" alt="Alex Shatov"></div>
+                                                    <div class="w-10 h-10 flex-shrink-0 mr-2 sm:mr-3"></div>
                                                     <div class="font-medium text-gray-800">{{$x->id}}</div>
                                                 </div>
                                             </td>
