@@ -78,7 +78,7 @@
     </div> --}}
     <!-- component -->
 <!-- Container -->
-<div class="bg-pink-100 flex items-center justify-center flex-col min-h-screen">
+<div class=" flex items-center justify-center flex-col min-h-screen">
   <br>
     <!-- Login component -->
     <div class="flex shadow-md">
@@ -115,16 +115,13 @@
                         <input id="password" name="password" type="password" placeholder="tu contraseña" class="border p-3 w-full rounded-lg">
                     </div>
 
-                    <input type="submit" value="Login" class="bg-pink-300 hover:bg-pink-700 transition-colors cursor-pointer uppercase font-bold w-full p-3 text-white rounded-lg"> 
+                    <input type="submit" value="Login" class="bg-blue-300 hover:bg-blue-700 transition-colors cursor-pointer uppercase font-bold w-full p-3 text-white rounded-lg"> 
                 </form>
             
             </div>
         </div>
   
-      <!-- Login banner -->
-      <div class="flex flex-wrap content-center justify-center rounded-r-md" style="width: 24rem; height: 32rem;">
-        <img class="w-full h-full bg-center bg-no-repeat bg-cover rounded-r-md" src="https://i.pinimg.com/564x/e7/3d/a6/e73da648296d55a3cd3aafbd0efd6148.jpg">
-      </div>
+      
   
     </div>
   

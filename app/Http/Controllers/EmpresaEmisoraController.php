@@ -2,16 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Receptora;
+use App\Models\Emisora;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class ReceptoraController extends Controller
+class EmpresaEmisoraController extends Controller
 {
+    //Visualizar el form
     //
     public function index(){
         //Mostrar la vista de login de usuarios
-        return view('formEmpresaReceptora');
+        return view('formEmisora');
     }
     public function store(Request $request){
 
@@ -19,33 +21,28 @@ class ReceptoraController extends Controller
         // $request->request->add(['rfc_emisora'=>Str::slug($request->rfc_emisora)]);
         //validaciones del formulario de registro
         $this->validate($request,[
-            'nombre'=>'required|min:5',
-            'direccion'=>'required|min:5',
-            'rfc'=>'required|min:5|max:20',
-            'contacto'=>'required|min:5',
-            'email'=>'required|unique:receptora|email|max:60',
-
+            'razon_social'=>'required|min:5',
+            'email'=>'required|unique:emisora|email|max:60',
+            'rfc_emisora'=>'required|min:5|max:20',
              
         ]);
         //dd('Mensaje creado cuenta...');
         
         //dd($request);
-        Receptora::create([
-            'nombre' =>$request->nombre,
-            'direccion' =>$request->direccion,
-            'rfc' =>$request->rfc,
-            'contacto' =>$request->contacto,
-            'email'=>$request->email,
-              
+        Emisora::create([
+              'razon_social' =>$request->razon_social,
+              'email'=>$request->email,
+              'rfc_emisora' =>$request->rfc_emisora,
               
         ]);
+        
+
         //Redireccionar a dashboard
         return redirect()->route('post.index');
     }
-
     public function show(){
-        $receptora = DB::table('receptora')->get();
+        $emisora = DB::table('emisora')->get();
         //Retornar a la vista productos
-        return view('empresaReceptora',['receptora'=>$receptora]);
+        return view('empresaEmisora',['emisora'=>$emisora]);
     }
 }

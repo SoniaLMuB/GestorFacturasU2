@@ -6,7 +6,7 @@
 @section('contenido')
 
 <!-- Container -->
-<div class="bg-pink-100 flex items-center justify-center flex-col min-h-screen">
+<div class=" flex items-center justify-center flex-col min-h-screen">
   
     <!-- Login component -->
     <div class="flex shadow-md">
@@ -18,7 +18,7 @@
             <small class="text-gray-400">Por favor ingresa los datos!</small>
     
             <!-- Form -->
-            <form action="{{route('factura.buscar')}}" method="POST" novalidate>
+            <form action="{{route('facturas.buscar')}}" method="POST" novalidate>
                     @csrf
                     <!--Genera un token que genera el registro -->
                     <!--Verificar la sesión-->

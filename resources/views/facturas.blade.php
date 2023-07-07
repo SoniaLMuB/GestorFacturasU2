@@ -2,7 +2,7 @@
 
 
 @section('contenido')
-<div class="bg-pink-100 flex items-center justify-center flex-col min-h-screen">
+<div class=" flex items-center justify-center flex-col min-h-screen">
     
 
     <!-- component -->
@@ -11,7 +11,7 @@
             <div class="flex items-center justify-between p-3">
                 <div class="my-4 flex justify-end space-x-2">
                     <button onclick="exportToPDF('Facturad')"
-                        class="inline-block px-2 py-1 rounded-lg font-bold text-sm text-white bg-pink-500 hover:bg-pink-700 transition-colors">
+                        class="inline-block px-2 py-1 rounded-lg font-bold text-sm text-white bg-red-500  transition-colors">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-file-earmark-pdf-fill" viewBox="0 0 16 16">
                             <path
@@ -22,7 +22,7 @@
                     </button>
 
                     <button onclick="exportarXLSX('facturas')"
-                        class="inline-block px-2 py-1 rounded-lg font-bold text-sm text-white bg-pink-500 hover:bg-pink-700 transition-colors">
+                        class="inline-block px-2 py-1 rounded-lg font-bold text-sm text-white bg-green-500  transition-colors">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-file-earmark-excel-fill" viewBox="0 0 16 16">
                             <path
@@ -30,7 +30,7 @@
                         </svg>
                     </button>
                 </div>
-                <a href="{{route('factura.index')}}" class="w-25 flex items-center gap-2 bg-pink-200 border p-2 text-gray-600 rounded text-sm  font-bold cursor-pointer">
+                <a href="{{route('facturas.index')}}" class="w-25 flex items-center gap-2 border p-2 text-gray-600 rounded text-sm  font-bold cursor-pointer">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
                     </svg>

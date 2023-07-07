@@ -2,7 +2,7 @@
 
 
 @section('contenido')
-<div class="bg-pink-100 flex items-center justify-center flex-col min-h-screen">
+<div class=" flex items-center justify-center flex-col min-h-screen">
     
 
     <!-- component -->
@@ -66,7 +66,7 @@
                                             </td>
                                             <td class="p-2 whitespace-nowrap">
                                                 <a class="flex justify-center"
-                                                    href="{{ route('factura.download', $x->pdf) }}">
+                                                    href="{{ route('facturas.download', $x->pdf) }}">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                         fill="currentColor" class="bi bi-filetype-pdf" viewBox="0 0 16 16">
                                                         <path fill-rule="evenodd"
