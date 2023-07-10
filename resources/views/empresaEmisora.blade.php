@@ -2,7 +2,7 @@
 
 
 @section('contenido')
-<div class=" flex items-center justify-center flex-col min-h-screen">
+<div class="bg-pink-100 flex items-center justify-center flex-col min-h-screen">
     
 
     <!-- component -->
@@ -11,7 +11,7 @@
             <div class="flex items-center justify-between p-3">
                 <div class="my-4 flex justify-end space-x-2">
                     <button onclick="exportToPDF('emisoras')"
-                        class="inline-block px-2 py-1 rounded-lg font-bold text-sm text-white bg-red-500 hover:bg-pink-700 transition-colors">
+                        class="inline-block px-2 py-1 rounded-lg font-bold text-sm text-white bg-pink-500 hover:bg-pink-700 transition-colors">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-file-earmark-pdf-fill" viewBox="0 0 16 16">
                             <path
@@ -22,7 +22,7 @@
                     </button>
 
                     <button onclick="exportarXLSX('emisoras')"
-                        class="inline-block px-2 py-1 rounded-lg font-bold text-sm text-white bg-green-500 hover:bg-pink-700 transition-colors">
+                        class="inline-block px-2 py-1 rounded-lg font-bold text-sm text-white bg-pink-500 hover:bg-pink-700 transition-colors">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-file-earmark-excel-fill" viewBox="0 0 16 16">
                             <path
@@ -30,7 +30,7 @@
                         </svg>
                     </button>
                 </div>
-                <a href="{{route('emisora.index')}}" class="w-25 flex items-center gap-2 bg-blue-200 border p-2 text-gray-600 rounded text-sm  font-bold cursor-pointer">
+                <a href="{{route('emisora.index')}}" class="w-25 flex items-center gap-2 bg-pink-200 border p-2 text-gray-600 rounded text-sm  font-bold cursor-pointer">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
                     </svg>
@@ -51,10 +51,10 @@
                                         <div class="font-semibold text-left">Empresa Num.</div>
                                     </th>
                                     <th class="p-2 whitespace-nowrap">
-                                        <div class="font-semibold text-left">Razon social</div>
+                                        <div class="font-semibold text-left">Razón social</div>
                                     </th>
                                     <th class="p-2 whitespace-nowrap">
-                                        <div class="font-semibold text-left">correo elecotrnico</div>
+                                        <div class="font-semibold text-left">correo electrónico</div>
                                     </th>
                                     <th class="p-2 whitespace-nowrap">
                                         <div class="font-semibold text-center">RFC</div>
@@ -67,7 +67,7 @@
                                         <tr>
                                             <td class="p-2 whitespace-nowrap">
                                                 <div class="flex items-center">
-                                                    <div class="w-10 h-10 flex-shrink-0 mr-2 sm:mr-3"></div>
+                                                    <div class="w-10 h-10 flex-shrink-0 mr-2 sm:mr-3"><img class="rounded-full" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQD-gpU4qUwZjKjsZQd0oME79CpFqICLpBClWiAY0BXEw_pK0DBkeDxzj5BwJreafsHFJ0&usqp=CAU" width="40" height="40" alt="Alex Shatov"></div>
                                                     <div class="font-medium text-gray-800">{{$x->id}}</div>
                                                 </div>
                                             </td>

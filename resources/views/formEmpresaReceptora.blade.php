@@ -6,7 +6,7 @@
 @section('contenido')
 
 <!-- Container -->
-<div class=" flex items-center justify-center flex-col min-h-screen">
+<div class="bg-pink-100 flex items-center justify-center flex-col min-h-screen">
   
     <!-- Login component -->
     <div class="flex shadow-md">
@@ -72,7 +72,7 @@
                     
                     
 
-                    <input type="submit" value="Registrar" class=" transition-colors cursor-pointer uppercase font-bold w-full p-3 text-white rounded-lg"> 
+                    <input type="submit" value="Registrar" class="bg-pink-300 hover:bg-pink-700 transition-colors cursor-pointer uppercase font-bold w-full p-3 text-white rounded-lg"> 
                 </form>
             <br>
             </div>

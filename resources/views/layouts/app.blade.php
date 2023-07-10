@@ -29,7 +29,7 @@
 <body class="bg-gray-100 antialiased">
 
     <!--ENCABEZADO DE LA PAGINA -->
-    <header class="p-3 border-b   shadow">
+    <header class="p-3 border-b  bg-pink-300 shadow">
         <div class="container mx-auto flex justify-between items-center">
             
             {{-- <a  class="text-3xl font-black">
@@ -42,26 +42,38 @@
                 
                 <!--BOTONES DEL MENÚ PARA INTERACCION DEL USUARIO-->
                 <nav class="flex items-center justify-center font-bold ">
-                    <a href="{{route('post.index')}}" class="w-25 flex items-center gap-2  p-2 text-gray-600 rounded text-lg  font-font-bold cursor-pointer   transition-colors">
-                        
+                    <a href="{{route('post.index')}}" class="w-25 flex items-center gap-2  p-2 text-gray-600 rounded text-lg  font-font-bold cursor-pointer  hover:text-pink-500  hover:bg-pink-300 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+                            <path fill-rule="evenodd" d="M9.293 2.293a1 1 0 011.414 0l7 7A1 1 0 0117 11h-1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-3a1 1 0 00-1-1H9a1 1 0 00-1 1v3a1 1 0 01-1 1H5a1 1 0 01-1-1v-6H3a1 1 0 01-.707-1.707l7-7z" clip-rule="evenodd" />
+                        </svg>
                         Dashboard
                     </a>
-                    <a href="{{route('emisora.show')}}" class="w-25 flex items-center gap-2  p-2 text-gray-600 rounded text-lg  font-font-bold cursor-pointer    transition-colors" >
-                        
+                    <a href="{{route('emisora.show')}}" class="w-25 flex items-center gap-2  p-2 text-gray-600 rounded text-lg  font-font-bold cursor-pointer  hover:text-pink-500  hover:bg-pink-300  transition-colors" >
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+                            <path fill-rule="evenodd" d="M4 16.5v-13h-.25a.75.75 0 010-1.5h12.5a.75.75 0 010 1.5H16v13h.25a.75.75 0 010 1.5h-3.5a.75.75 0 01-.75-.75v-2.5a.75.75 0 00-.75-.75h-2.5a.75.75 0 00-.75.75v2.5a.75.75 0 01-.75.75h-3.5a.75.75 0 010-1.5H4zm3-11a.5.5 0 01.5-.5h1a.5.5 0 01.5.5v1a.5.5 0 01-.5.5h-1a.5.5 0 01-.5-.5v-1zM7.5 9a.5.5 0 00-.5.5v1a.5.5 0 00.5.5h1a.5.5 0 00.5-.5v-1a.5.5 0 00-.5-.5h-1zM11 5.5a.5.5 0 01.5-.5h1a.5.5 0 01.5.5v1a.5.5 0 01-.5.5h-1a.5.5 0 01-.5-.5v-1zm.5 3.5a.5.5 0 00-.5.5v1a.5.5 0 00.5.5h1a.5.5 0 00.5-.5v-1a.5.5 0 00-.5-.5h-1z" clip-rule="evenodd" />
+                        </svg> 
                         Empresa Emisora
                     </a>
-                    <a href="{{route('receptora.show')}}" class="w-25 flex items-center gap-2  p-2 text-gray-600 rounded text-lg  font-font-bold cursor-pointer  transition-colors" >
-                        
+                    <a href="{{route('receptora.show')}}" class="w-25 flex items-center gap-2  p-2 text-gray-600 rounded text-lg  font-font-bold cursor-pointer  hover:text-pink-500  hover:bg-pink-300 transition-colors" >
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+                            <path fill-rule="evenodd" d="M1 2.75A.75.75 0 011.75 2h10.5a.75.75 0 010 1.5H12v13.75a.75.75 0 01-.75.75h-1.5a.75.75 0 01-.75-.75v-2.5a.75.75 0 00-.75-.75h-2.5a.75.75 0 00-.75.75v2.5a.75.75 0 01-.75.75h-2.5a.75.75 0 010-1.5H2v-13h-.25A.75.75 0 011 2.75zM4 5.5a.5.5 0 01.5-.5h1a.5.5 0 01.5.5v1a.5.5 0 01-.5.5h-1a.5.5 0 01-.5-.5v-1zM4.5 9a.5.5 0 00-.5.5v1a.5.5 0 00.5.5h1a.5.5 0 00.5-.5v-1a.5.5 0 00-.5-.5h-1zM8 5.5a.5.5 0 01.5-.5h1a.5.5 0 01.5.5v1a.5.5 0 01-.5.5h-1a.5.5 0 01-.5-.5v-1zM8.5 9a.5.5 0 00-.5.5v1a.5.5 0 00.5.5h1a.5.5 0 00.5-.5v-1a.5.5 0 00-.5-.5h-1zM14.25 6a.75.75 0 00-.75.75V17a1 1 0 001 1h3.75a.75.75 0 000-1.5H18v-9h.25a.75.75 0 000-1.5h-4zm.5 3.5a.5.5 0 01.5-.5h1a.5.5 0 01.5.5v1a.5.5 0 01-.5.5h-1a.5.5 0 01-.5-.5v-1zm.5 3.5a.5.5 0 00-.5.5v1a.5.5 0 00.5.5h1a.5.5 0 00.5-.5v-1a.5.5 0 00-.5-.5h-1z" clip-rule="evenodd" />
+                        </svg>
                         Empresa Receptora
                     </a>
-                    <a href="{{route('facturas.show')}}" class="w-25 flex items-center gap-2  p-2 text-gray-600 rounded text-lg  font-font-bold cursor-pointer     transition-colors" >
-                        
+                    <a href="{{route('factura.show')}}" class="w-25 flex items-center gap-2  p-2 text-gray-600 rounded text-lg  font-font-bold cursor-pointer  hover:text-pink-500  hover:bg-pink-300 transition-colors" >
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                            <path fill-rule="evenodd" d="M17.663 3.118c.225.015.45.032.673.05C19.876 3.298 21 4.604 21 6.109v9.642a3 3 0 01-3 3V16.5c0-5.922-4.576-10.775-10.384-11.217.324-1.132 1.3-2.01 2.548-2.114.224-.019.448-.036.673-.051A3 3 0 0113.5 1.5H15a3 3 0 012.663 1.618zM12 4.5A1.5 1.5 0 0113.5 3H15a1.5 1.5 0 011.5 1.5H12z" clip-rule="evenodd" />
+                            <path d="M3 8.625c0-1.036.84-1.875 1.875-1.875h.375A3.75 3.75 0 019 10.5v1.875c0 1.036.84 1.875 1.875 1.875h1.875A3.75 3.75 0 0116.5 18v2.625c0 1.035-.84 1.875-1.875 1.875h-9.75A1.875 1.875 0 013 20.625v-12z" />
+                            <path d="M10.5 10.5a5.23 5.23 0 00-1.279-3.434 9.768 9.768 0 016.963 6.963 5.23 5.23 0 00-3.434-1.279h-1.875a.375.375 0 01-.375-.375V10.5z" />
+                        </svg>
                           
                           
                         Facturas
                     </a>
-                    <a href="{{route('logout')}}" class="w-25 flex items-center gap-2  p-2 text-gray-600 rounded text-lg  font-font-bold cursor-pointer  transition-colors" >
-                        
+                    <a href="{{route('logout')}}" class="w-25 flex items-center gap-2  p-2 text-gray-600 rounded text-lg  font-font-bold cursor-pointer  hover:text-pink-500  hover:bg-pink-300 transition-colors" >
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                            <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-4.28 9.22a.75.75 0 000 1.06l3 3a.75.75 0 101.06-1.06l-1.72-1.72h5.69a.75.75 0 000-1.5h-5.69l1.72-1.72a.75.75 0 00-1.06-1.06l-3 3z" clip-rule="evenodd" />
+                        </svg>
                         Cerrar Sesión
                     </a>
                     {{-- <form method="POST"action="{{route('logout')}}">
@@ -88,17 +100,17 @@
     </header>
     <!--Contenido para cada una de las vistas-->
     <main class="container mx-auto ">
-        <h2 class="font-black text-center text-3xl ">
+        <h2 class="font-black text-center text-3xl  bg-pink-100">
             @yield('titulo')
         </h2>
-        <div class="">
+        <div class="bg-pink-100">
             @yield('contenido')
         </div>
        
     </main>
     <!--Pie de pagina -->
-    <footer class="text-center  p-3 text-gray-500 font-bold ">
-        Gestor de facturas - Todos los derechos reservados {{now()->year}}
+    <footer class="text-center bg-pink-300 p-3 text-gray-500 font-bold ">
+        Sonia Lizbeth Muñoz Barrientos Gestor de facturas - Todos los derechos reservados {{now()->year}}
     </footer>       
 </body>
 </html>

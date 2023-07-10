@@ -11,7 +11,7 @@
 @section('contenido')
 
 <!-- Container -->
-<div class=" flex items-center justify-center flex-col min-h-screen">
+<div class="bg-pink-100 flex items-center justify-center flex-col min-h-screen">
 <br>
 <br>
 <br>

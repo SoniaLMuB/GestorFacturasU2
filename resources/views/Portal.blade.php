@@ -2,7 +2,7 @@
 
 
 @section('contenido')
-<div class=" flex items-center justify-center flex-col min-h-screen">
+<div class="bg-pink-100 flex items-center justify-center flex-col min-h-screen">
     
 
     <!-- component -->
@@ -45,7 +45,7 @@
                                         <tr>
                                             <td class="p-2 whitespace-nowrap">
                                                 <div class="flex items-center">
-                                                    <div class="w-10 h-10 flex-shrink-0 mr-2 sm:mr-3"></div>
+                                                    <div class="w-10 h-10 flex-shrink-0 mr-2 sm:mr-3"><img class="rounded-full" src="https://img.freepik.com/vector-premium/recibo-factura-papel-plano-dibujos-animados-o-factura-pagar-aislado_101884-255.jpg?w=2000" width="40" height="40" alt="Alex Shatov"></div>
                                                     <div class="font-medium text-gray-800">{{$x->id}}</div>
                                                 </div>
                                             </td>
@@ -66,7 +66,7 @@
                                             </td>
                                             <td class="p-2 whitespace-nowrap">
                                                 <a class="flex justify-center"
-                                                    href="{{ route('facturas.download', $x->pdf) }}">
+                                                    href="{{ route('factura.download', $x->pdf) }}">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                         fill="currentColor" class="bi bi-filetype-pdf" viewBox="0 0 16 16">
                                                         <path fill-rule="evenodd"
@@ -92,7 +92,7 @@
                                 <tr>
                                     <td class="p-2 whitespace-nowrap">
                                         <div class="flex items-center">
-                                            <div class="w-10 h-10 flex-shrink-0 mr-2 sm:mr-3"></div>
+                                            <div class="w-10 h-10 flex-shrink-0 mr-2 sm:mr-3"><img class="rounded-full" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQD-gpU4qUwZjKjsZQd0oME79CpFqICLpBClWiAY0BXEw_pK0DBkeDxzj5BwJreafsHFJ0&usqp=CAU" width="40" height="40" alt="Alex Shatov"></div>
                                             <div class="font-medium text-gray-800">No hay facturas registradas</div>
                                         </div>
                                     </td>

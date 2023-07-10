@@ -7,7 +7,7 @@ use App\Models\Factura;
 use App\Models\Receptora;
 use Illuminate\Http\Request;
 
-class BuscarController extends Controller
+class BuscarFacturaController extends Controller
 {
     // Función para redireccionar a la página principal
     public function index()
