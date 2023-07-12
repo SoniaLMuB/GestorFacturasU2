@@ -58,7 +58,18 @@ class ReceptoraController extends Controller
     //eliminar factura con un id
     public function delete($id)
     {
-        Receptora::find($id)->delete();
+        //Encuentra el id de la empresa
+        $empresaRe=Receptora::find($id);
+        //Verificar si hay facturas relacionadas con la empresa
+        if($empresaRe->facturas()->exists()){
+            $facturas=$empresaRe->facturas;
+            foreach($facturas as $fact){
+                //Eliminar la factura
+                $fact->delete();
+            }
+        }
+        // Eliminar la empresa Receptora
+        $empresaRe->delete();
         return redirect()->back();
     }
 }

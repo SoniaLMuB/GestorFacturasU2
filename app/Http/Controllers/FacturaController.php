@@ -20,7 +20,7 @@ class FacturaController extends Controller
     //dirigir a la vista a la vista del form
     public function index(){
         //Se instancia a los modelos para obtener todos los datos
-        //$facturas=Factura::with('empresaEmisora','empresaReceptora')->get();
+        //
         $receptora=Receptora::all();
         $emisora=Emisora::all();
         return view('formfacturas',['emisora'=>$emisora, 'receptora'=>$receptora]);
@@ -30,7 +30,7 @@ class FacturaController extends Controller
     //Mostrar la lo guardado
     public function show(){
         //Obtiene los datos de la tabla de facturas y las pasará con $facturas
-        
+        //$facturas=Factura::with('empEmisora','empReceptora')->get();
         $facturas = Factura::all();
         #$facturas = DB::table('facturas')->get();
         //Retornar a la vista de facturas (tabla) y pasará los datos de la tabla de facturas

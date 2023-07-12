@@ -54,7 +54,17 @@ class EmisoraController extends Controller
     //eliminar factura con un id
     public function delete($id)
     {
-        Emisora::find($id)->delete();
+        //Encuentra el id de la empresa
+        $empresaEm=Emisora::find($id);
+        //Verificar si hay facturas relacionadas con la empresa
+        if($empresaEm->facturas()->exists()){
+            $facturas=$empresaEm->facturas;
+            foreach($facturas as $fact){
+                $fact->delete();
+            }
+        }
+        // Eliminar la empresa Receptora
+        $empresaEm->delete();
         return redirect()->back();
     }
 }
