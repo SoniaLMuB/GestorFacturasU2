@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <elemento1>
+    <subelemento1>Contenido del subelemento 1</subelemento1>
+    <subelemento2>Contenido del subelemento 2</subelemento2>
+  </elemento1>
+  <elemento2>
+    <subelemento3>Contenido del subelemento 3</subelemento3>
+    <subelemento4>Contenido del subelemento 4</subelemento4>
+  </elemento2>
+</root>

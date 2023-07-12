@@ -34,6 +34,12 @@
                         <input id="nombre" name="nombre" type="text" placeholder="ingresa el nombre de la empresa" class="border p-3 w-full rounded-lg
                         @error('nombre') border-red-500  @enderror"
                         value="{{old('nombre')}}">
+                        <!--Mostrar el mensaje de error-->
+                        @error('nombre')
+                            <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">
+                                {{$message}}
+                            </p>
+                        @enderror
                     </div>
 
                     <div  class="mb-5">
@@ -42,6 +48,12 @@
                         <input id="direccion" name="direccion" type="text" placeholder="ingresa direccion de la empresa" class="border p-3 w-full rounded-lg
                         @error('direccion') border-red-500  @enderror"
                         value="{{old('direccion')}}">
+                        <!--Mostrar el mensaje de error-->
+                        @error('direccion')
+                            <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">
+                                {{$message}}
+                            </p>
+                        @enderror
                     </div>
                     
                     <div  class="mb-5">
@@ -50,6 +62,12 @@
                         <input id="rfc" name="rfc" type="text" placeholder="Ingresa el RFC de la empresa" class="border p-3 w-full rounded-lg
                         @error('rfc') border-red-500  @enderror"
                         value="{{old('rfc')}}">
+                        <!--Mostrar el mensaje de error-->
+                        @error('rfc')
+                            <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">
+                                {{$message}}
+                            </p>
+                        @enderror
                     </div>
 
                     <div  class="mb-5">
@@ -58,6 +76,12 @@
                         <input id="contacto" name="contacto" type="text" placeholder="Ingresa el contacto de la empresa" class="border p-3 w-full rounded-lg
                         @error('contacto') border-red-500  @enderror"
                         value="{{old('contacto')}}">
+                        <!--Mostrar el mensaje de error-->
+                        @error('contacto')
+                            <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">
+                                {{$message}}
+                            </p>
+                        @enderror
                     </div>
 
                     <div  class="mb-5">
@@ -66,6 +90,12 @@
                         <input id="email" name="email" type="text" placeholder="tu correo eléctronico" class="border p-3 w-full rounded-lg
                         @error('email') border-red-500  @enderror"
                         value="{{old('email')}}">
+                        <!--Mostrar el mensaje de error-->
+                        @error('email')
+                            <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">
+                                {{$message}}
+                            </p>
+                        @enderror
                     </div>
 
                     

@@ -20,8 +20,7 @@ use App\Http\Controllers\ReceptoraController;
 |
 */
 
-Route::get('/',[BuscarFacturaController::class,'index']);
-
+Route::get('/',[BuscarFacturaController::class,'index'])->name("principal");
 //Ruta paa login
 Route::get('/login',[LoginController::class,'index'])->name("login");
 
@@ -39,12 +38,16 @@ Route::get('/RegistrandoEmpresaEmisora',[EmisoraController::class,'index'])->nam
 Route::post('/RegistrandoEmpresaEmisora',[EmisoraController::class,'store'])->name("emisora.store");
 //Ruta para la vista de la tabla de las empresas emisoras
 Route::get('/visualizarempresas',[EmisoraController::class,'show'])->name("emisora.show");
+//ruta para eliminar emisora
+Route::delete('/Emisora/{id}', [EmisoraController::class, 'delete'])->name('emisora.delete');
 //RUta para el form
 Route::get('/RegistrandoEmpresaReceptora',[ReceptoraController::class,'index'])->name("receptora.index");
 //ruta para guardar datos
 Route::post('/RegistrandoEmpresaReceptora',[ReceptoraController::class,'store'])->name("receptora.store");
 //Ruta para la vista de la tabla de las empresas receptoras
 Route::get('/visualizarempresasREceptora',[ReceptoraController::class,'show'])->name("receptora.show");
+//ruta para eliminar empresa receptora 
+Route::delete('/Receptora/{id}', [ReceptoraController::class, 'delete'])->name('receptora.delete');
 //Ruta para dirigir alformulario de factura
 Route::get('/Facturas/form',[FacturaController::class,'index'])->name("factura.index");
 //Ruta para registrar factura
@@ -54,7 +57,10 @@ Route::get('/Ver/facturas',[FacturaController::class,'show'])->name("factura.sho
 //Ruta para poder guardar los archivos de las facturas
 Route::post('/facturas/pdf',[FacturaController::class,'storePdf'])->name("factura.pdf");
 Route::post('/facturas/xml',[FacturaController::class,'storeXml'])->name("factura.xml");
-//Ruta para descargar los archivos de la tabla
-Route::get('/download/{file}',[FacturaController::class,'descargar'])->name('factura.download');
+//ruta para eliminar factura 
+Route::delete('/Facturas/{id}', [FacturaController::class, 'delete'])->name('factura.delete');
+
+//Ruta para descargar los archivos de la tabla de Facturas
+Route::get('/descargarArchivo/{file}',[FacturaController::class,'descargar'])->name('factura.descargar');
 //Ruta para buscar factura
 Route::post('/buscarFactura',[BuscarFacturaController::class,'buscar'])->name('factura.buscar');

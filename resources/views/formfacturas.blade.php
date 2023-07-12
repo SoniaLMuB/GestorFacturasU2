@@ -36,10 +36,9 @@
                     @endif
 
                     <div class="mb-5">
-                        <!--Usuario-->
+                        <!--Obtener -->
                         <label for="empresa" class="mb-2 block  text-gray-500 font-bold">Empresa emisora</label>
                         <select name="emisora" class="border p-3 w-full rounded-lg">
->
                             @if (count($emisora) > 0)
                                 <option value="">Seleccione una empresa emisora</option>
                                 @foreach ($emisora as $x)
@@ -49,11 +48,17 @@
                                 <option value="">No hay empresas emisoras</option>
                             @endif
                         </select>
+                        <!--Mostrar el mensaje de error-->
+                        @error('emisora')
+                            <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">
+                                {{$message}}
+                            </p>
+                        @enderror
                     </div>
 
                     <div class="mb-5">
                         <!--Usuario-->
-                        <label for="empresa" class="mb-2 block  text-gray-500 font-bold">Empresa emisora</label>
+                        <label for="empresa" class="mb-2 block  text-gray-500 font-bold">Empresa Receptora</label>
                         <select name="receptora"
                         class="border p-3 w-full rounded-lg">
                             @if (count($receptora) > 0)
@@ -65,6 +70,12 @@
                                 <option value="">No hay empresas emisoras</option>
                             @endif
                         </select>
+                        <!--Mostrar el mensaje de error-->
+                        @error('receptora')
+                            <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">
+                                {{$message}}
+                            </p>
+                        @enderror
                     </div>
                     <div class="mb-5">
                         <input name="pdf" type="hidden" value="{{ old('pdf') }}">
@@ -89,6 +100,12 @@
                         <input id="folio" name="folio" type="text" placeholder="Ingresa el RFC de la empresa"
                             class="border p-3 w-full rounded-lg @error('folio') border-red-500 @enderror"
                             value="{{ old('folio') }}">
+                            <!--Mostrar el mensaje de error-->
+                        @error('folio')
+                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">
+                            {{$message}}
+                        </p>
+                    @enderror
                     </div>
 
                     <input type="submit" value="Registrar"
@@ -97,7 +114,7 @@
             </div>
         </div>
 
-        <!-- Dropzone section -->
+        <!-- Cargar los archivo (Dropzone) -->
         <div class="flex flex-wrap content-center justify-center bg-white" style="width: 32rem">
             <div class="w-72">
                 <label for="dropzonepdf" class="mb-2 block text-gray-500 font-bold">Factura en pdf</label>
@@ -111,7 +128,7 @@
             </div>
         </div>
 
-        <!-- Dropzone section -->
+        <!-- Cargar los archivo (Dropzone)-->
         <div class="flex flex-wrap content-center justify-center bg-white" style="width: 32rem">
             <div class="w-72">
                 <label for="dropzonexml" class="mb-2 block text-gray-500 font-bold">Factura en xml</label>

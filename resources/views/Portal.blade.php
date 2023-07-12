@@ -1,5 +1,8 @@
 @extends('layouts.app')
 
+@section('titulo')
+    Facturas
+@endsection
 
 @section('contenido')
 <div class="bg-pink-100 flex items-center justify-center flex-col min-h-screen">
@@ -8,25 +11,24 @@
     <!-- component -->
     <section class="antialiased  text-gray-600 h-screen px-4">
         <div class="flex flex-col justify-center h-full" style="width: 60rem;">
-            
             <!-- Table -->
             <div class="w-full  mx-auto bg-white shadow-lg rounded-sm border border-gray-200"style="width: 60rem;">
                 <header class="px-5 py-4 border-b border-gray-100">
-                    <h2 class="font-semibold text-gray-800">Facturas Emitidas</h2>
+                    <h2 class="font-semibold text-gray-800">Factura Encontrada</h2>
                 </header>
                 <div class="p-3">
                     <div class="overflow-x-auto">
-                        <table class="table-auto w-full">
+                        <table class="table-auto w-full" id="table1">
                             <thead class="text-xs font-semibold uppercase text-gray-400 bg-gray-50">
                                 <tr>
                                     <th class="p-2 whitespace-nowrap">
                                         <div class="font-semibold text-left">Num. Factura</div>
                                     </th>
                                     <th class="p-2 whitespace-nowrap">
-                                        <div class="font-semibold text-left">Num. Emisora</div>
+                                        <div class="font-semibold text-left">Empresa Emisora</div>
                                     </th>
                                     <th class="p-2 whitespace-nowrap">
-                                        <div class="font-semibold text-left">Num. Receptora</div>
+                                        <div class="font-semibold text-left">Empresa Receptora</div>
                                     </th>
                                     <th class="p-2 whitespace-nowrap">
                                         <div class="font-semibold text-left">Folio</div>
@@ -51,12 +53,12 @@
                                             </td>
                                             <td class="p-2 whitespace-nowrap">
                                                 <div class="flex items-center">
-                                                    <div class="font-medium text-gray-800">{{$x->emisora_id}}</div>
+                                                    <div class="font-medium text-gray-800">{{$x->empEmisora->razon_social}}</div>
                                                 </div>
                                             </td>
                                             <td class="p-2 whitespace-nowrap">
                                                 <div class="flex items-center">
-                                                    <div class="font-medium text-gray-800">{{$x->receptora_id}}</div>
+                                                    <div class="font-medium text-gray-800">{{$x->empReceptora->nombre}}</div>
                                                 </div>
                                             </td>
                                             <td class="p-2 whitespace-nowrap">
@@ -66,23 +68,22 @@
                                             </td>
                                             <td class="p-2 whitespace-nowrap">
                                                 <a class="flex justify-center"
-                                                    href="{{ route('factura.download', $x->pdf) }}">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                        fill="currentColor" class="bi bi-filetype-pdf" viewBox="0 0 16 16">
-                                                        <path fill-rule="evenodd"
-                                                            d="M14 4.5V14a2 2 0 0 1-2 2h-1v-1h1a1 1 0 0 0 1-1V4.5h-2A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v9H2V2a2 2 0 0 1 2-2h5.5L14 4.5ZM1.6 11.85H0v3.999h.791v-1.342h.803c.287 0 .531-.057.732-.173.203-.117.358-.275.463-.474a1.42 1.42 0 0 0 .161-.677c0-.25-.053-.476-.158-.677a1.176 1.176 0 0 0-.46-.477c-.2-.12-.443-.179-.732-.179Zm.545 1.333a.795.795 0 0 1-.085.38.574.574 0 0 1-.238.241.794.794 0 0 1-.375.082H.788V12.48h.66c.218 0 .389.06.512.181.123.122.185.296.185.522Zm1.217-1.333v3.999h1.46c.401 0 .734-.08.998-.237a1.45 1.45 0 0 0 .595-.689c.13-.3.196-.662.196-1.084 0-.42-.065-.778-.196-1.075a1.426 1.426 0 0 0-.589-.68c-.264-.156-.599-.234-1.005-.234H3.362Zm.791.645h.563c.248 0 .45.05.609.152a.89.89 0 0 1 .354.454c.079.201.118.452.118.753a2.3 2.3 0 0 1-.068.592 1.14 1.14 0 0 1-.196.422.8.8 0 0 1-.334.252 1.298 1.298 0 0 1-.483.082h-.563v-2.707Zm3.743 1.763v1.591h-.79V11.85h2.548v.653H7.896v1.117h1.606v.638H7.896Z" />
-                                                    </svg>
+                                                    href="{{ route('factura.descargar', $x->pdf) }}">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">
+                                                        <path d="M64 464H96v48H64c-35.3 0-64-28.7-64-64V64C0 28.7 28.7 0 64 0H229.5c17 0 33.3 6.7 45.3 18.7l90.5 90.5c12 12 18.7 28.3 18.7 45.3V288H336V160H256c-17.7 0-32-14.3-32-32V48H64c-8.8 0-16 7.2-16 16V448c0 8.8 7.2 16 16 16zM176 352h32c30.9 0 56 25.1 56 56s-25.1 56-56 56H192v32c0 8.8-7.2 16-16 16s-16-7.2-16-16V448 368c0-8.8 7.2-16 16-16zm32 80c13.3 0 24-10.7 24-24s-10.7-24-24-24H192v48h16zm96-80h32c26.5 0 48 21.5 48 48v64c0 26.5-21.5 48-48 48H304c-8.8 0-16-7.2-16-16V368c0-8.8 7.2-16 16-16zm32 128c8.8 0 16-7.2 16-16V400c0-8.8-7.2-16-16-16H320v96h16zm80-112c0-8.8 7.2-16 16-16h48c8.8 0 16 7.2 16 16s-7.2 16-16 16H448v32h32c8.8 0 16 7.2 16 16s-7.2 16-16 16H448v48c0 8.8-7.2 16-16 16s-16-7.2-16-16V432 368z"/></svg>
+                                                    {{$x->pdf}}
                                                 </a>
         
                                             </td>
                                             <td class="p-2 whitespace-nowrap">
                                                 <a class="flex justify-center"
-                                                    href="{{ route('factura.download', $x->xml) }}">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                                                        fill="currentColor" class="bi bi-filetype-xml" viewBox="0 0 16 16">
-                                                        <path fill-rule="evenodd"
-                                                            d="M14 4.5V14a2 2 0 0 1-2 2v-1a1 1 0 0 0 1-1V4.5h-2A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v9H2V2a2 2 0 0 1 2-2h5.5L14 4.5ZM3.527 11.85h-.893l-.823 1.439h-.036L.943 11.85H.012l1.227 1.983L0 15.85h.861l.853-1.415h.035l.85 1.415h.908l-1.254-1.992 1.274-2.007Zm.954 3.999v-2.66h.038l.952 2.159h.516l.946-2.16h.038v2.661h.715V11.85h-.8l-1.14 2.596h-.025L4.58 11.85h-.806v3.999h.706Zm4.71-.674h1.696v.674H8.4V11.85h.791v3.325Z" />
+                                                    href="{{ route('factura.descargar', $x->xml) }}">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512">
+                                                        <path d="M320 464c8.8 0 16-7.2 16-16V160H256c-17.7 0-32-14.3-32-32V48H64c-8.8 0-16 7.2-16 16V448c0 8.8 7.2 16 16 16H320zM0 
+                                                        64C0 28.7 28.7 0 64 0H229.5c17 0 33.3 6.7 45.3 18.7l90.5 90.5c12 12 18.7 28.3 18.7 45.3V448c0 35.3-28.7 64-64 64H64c-35.3 
+                                                        0-64-28.7-64-64V64z"/>
                                                     </svg>
+                                                    {{ $x->xml}}
                                                 </a>
                                             </td>
 

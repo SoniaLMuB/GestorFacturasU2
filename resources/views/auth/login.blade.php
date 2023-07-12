@@ -14,6 +14,8 @@
             <br>
             <div class="w-72">
             <!-- Heading -->
+            <br>
+            <br>
             <h1 class="text-xl font-semibold">Bienvenidos</h1>
             <small class="text-gray-400">Por favor ingresa tus datos!</small>
     
@@ -41,7 +43,7 @@
                         <label for="password" class="mb-2 block uppercase text-gray-500 font-bold">Contraseña</label>
                         <input id="password" name="password" type="password" placeholder="tu contraseña" class="border p-3 w-full rounded-lg">
                     </div>
-
+                    <br>
                     <input type="submit" value="Login" class="bg-pink-300 hover:bg-pink-700 transition-colors cursor-pointer uppercase font-bold w-full p-3 text-white rounded-lg"> 
                 </form>
             
@@ -49,9 +51,9 @@
         </div>
   
       <!-- Login banner -->
-      <div class="flex flex-wrap content-center justify-center rounded-r-md" style="width: 24rem; height: 32rem;">
-        <img class="w-full h-full bg-center bg-no-repeat bg-cover rounded-r-md" src="https://i.pinimg.com/564x/e7/3d/a6/e73da648296d55a3cd3aafbd0efd6148.jpg">
-      </div>
+        <div class="flex flex-wrap content-center justify-center rounded-r-md" style="width: 24rem; height: 32rem;">
+            <img class="w-full h-full bg-center bg-no-repeat bg-cover rounded-r-md" src="https://i.pinimg.com/564x/e7/3d/a6/e73da648296d55a3cd3aafbd0efd6148.jpg">
+        </div>
   
     </div>
   

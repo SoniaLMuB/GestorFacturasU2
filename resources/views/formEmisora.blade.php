@@ -7,18 +7,19 @@
 
 <!-- Container -->
 <div class="bg-pink-100 flex items-center justify-center flex-col min-h-screen">
-  
+    <br>
     <!-- Login component -->
     <div class="flex shadow-md">
-      <!-- Login form -->
+        <br>
+        <!-- Login form -->
         <div class="flex flex-wrap content-center justify-center rounded-l-md bg-white" style="width: 30rem; height: 32rem;">
             <div class="w-72">
-            <!-- Heading -->
-            <h1 class="text-xl font-semibold">Registro de la empresa emisora</h1>
-            <small class="text-gray-400">Por favor ingresa los datos!</small>
-    
-            <!-- Form -->
-            <form action="{{route('emisora.store')}}" method="POST" novalidate>
+                <br>
+                <!-- Heading -->
+                <h1 class="text-xl font-semibold">Registro de la empresa emisora</h1>
+                <small class="text-gray-400">Por favor ingresa los datos!</small>
+                <!-- Form -->
+                <form action="{{route('emisora.store')}}" method="POST" novalidate>
                     @csrf
                     <!--Genera un token que genera el registro -->
                     <!--Verificar la sesión-->
@@ -34,6 +35,11 @@
                         <input id="razon_social" name="razon_social" type="text" placeholder="Ingresa la Razón Social" class="border p-3 w-full rounded-lg
                         @error('razon_social') border-red-500  @enderror"
                         value="{{old('razon_social')}}">
+                        @error('razon_social')
+                            <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">
+                                {{$message}}
+                            </p>
+                        @enderror
                     </div>
 
                     <div  class="mb-5">
@@ -42,6 +48,12 @@
                         <input id="email" name="email" type="text" placeholder="Ingresa el  correo eléctronico" class="border p-3 w-full rounded-lg
                         @error('email') border-red-500  @enderror"
                         value="{{old('email')}}">
+                        <!--Mostrar el mensaje de error-->
+                        @error('email')
+                            <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">
+                                {{$message}}
+                            </p>
+                        @enderror
                     </div>
 
                     <div  class="mb-5">
@@ -50,20 +62,24 @@
                         <input id="rfc_emisora" name="rfc_emisora" type="text" placeholder="Ingresa el Rfc de la empresa" class="border p-3 w-full rounded-lg
                         @error('rfc_emisora') border-red-500  @enderror"
                         value="{{old('rfc_emisora')}}">
+                        <!--Mostrar el mensaje de error-->
+                        @error('rfc_emisora')
+                            <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">
+                                {{$message}}
+                            </p>
+                        @enderror
                     </div>
                     
                     
 
                     <input type="submit" value="Registrar" class="bg-pink-300 hover:bg-pink-700 transition-colors cursor-pointer uppercase font-bold w-full p-3 text-white rounded-lg"> 
                 </form>
-            
+            <br>
             </div>
         </div>
-  
-      
-  
+    <br>
     </div>
-  
+    <br>
 
 </div>
 @endsection

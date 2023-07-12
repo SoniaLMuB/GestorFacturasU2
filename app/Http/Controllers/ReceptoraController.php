@@ -8,7 +8,14 @@ use Illuminate\Support\Facades\DB;
 
 class ReceptoraController extends Controller
 {
-    //
+    //El constructor es lo que se ejecuta cuando instanciamos un controlador
+    public function __construct()
+    {
+        //protegemos la url
+        //Solo los usuarios autenticados podrán ingresar
+        $this->middleware('auth');
+    }
+    //Visualizar el formulario de la empresa emisora
     public function index(){
         //Mostrar la vista de login de usuarios
         return view('formEmpresaReceptora');
@@ -21,7 +28,7 @@ class ReceptoraController extends Controller
         $this->validate($request,[
             'nombre'=>'required|min:5',
             'direccion'=>'required|min:5',
-            'rfc'=>'required|min:5|max:20',
+            'rfc'=>'required|unique:receptora|min:5|max:20',
             'contacto'=>'required|min:5',
             'email'=>'required|unique:receptora|email|max:60',
 
@@ -47,5 +54,11 @@ class ReceptoraController extends Controller
         $receptora = DB::table('receptora')->get();
         //Retornar a la vista productos
         return view('empresaReceptora',['receptora'=>$receptora]);
+    }
+    //eliminar factura con un id
+    public function delete($id)
+    {
+        Receptora::find($id)->delete();
+        return redirect()->back();
     }
 }

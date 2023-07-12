@@ -10,6 +10,13 @@ use Illuminate\Support\Facades\DB;
 
 class FacturaController extends Controller
 {
+    //El constructor es lo que se ejecuta cuando instanciamos un controlador
+    public function __construct()
+    {
+        //protegemos la url
+        //Solo los usuarios autenticados podrán ingresar
+        $this->middleware('auth');
+    }
     //dirigir a la vista a la vista del form
     public function index(){
         //Se instancia a los modelos para obtener todos los datos
@@ -22,8 +29,11 @@ class FacturaController extends Controller
 
     //Mostrar la lo guardado
     public function show(){
-        $facturas = DB::table('facturas')->get();
-        //Retornar a la vista +
+        //Obtiene los datos de la tabla de facturas y las pasará con $facturas
+        
+        $facturas = Factura::all();
+        #$facturas = DB::table('facturas')->get();
+        //Retornar a la vista de facturas (tabla) y pasará los datos de la tabla de facturas
         return view('facturas',['facturas'=>$facturas]);
     }
 
@@ -33,7 +43,7 @@ class FacturaController extends Controller
         $this->validate($request,[
             'emisora'=>'required',
             'receptora'=>'required',
-            'folio'=>'required',
+            'folio'=>'required|unique:facturas',
             'pdf'=>'required',
             'xml'=>'required'
         ]);
@@ -46,7 +56,7 @@ class FacturaController extends Controller
             'xml'=>$request->xml
 
         ]);
-
+        //Retorna a la vista del Dashboard
         return redirect()->route('post.index');
     }
 
@@ -82,8 +92,16 @@ class FacturaController extends Controller
         ]);
     }
 
+    //Descargar el archivo de las facturas 
     public function descargar($file){
         $pathFile = public_path('uploads').'/'.$file;
         return response()->download($pathFile);
+    }
+    
+    //eliminar factura con un id
+    public function delete($id)
+    {
+        Factura::find($id)->delete();
+        return redirect()->back();
     }
 }

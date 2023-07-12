@@ -18,12 +18,12 @@ class Factura extends Model
     ];
     
     //Se hacen las relaciones entre las tablas de la base de datos
-    public function empresaEmisora(){
+    public function empEmisora(){
         return $this->belongsTo(Emisora::class,'emisora_id');
     }
 
     //Se hacen las relaciones de eloquent de las empresas
-    public function empresaReceptora(){
+    public function empReceptora(){
         return $this->belongsTo(Receptora::class,'receptora_id');
     }
 }
